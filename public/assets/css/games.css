@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    min-height: 100vh; /* Altura mínima del 100% del viewport */
+    display: flex; /* Utilizamos Flexbox para alinear el contenido */
+    flex-direction: column; /* El contenido se apila verticalmente */
+}
+
+main {
+    flex: 1; /* El contenido principal (main) se expandirá para ocupar todo el espacio disponible */
+}
+
+#hero-text {
+    font-weight: bold;
+}
+
+/* EFECTO PARALLAX */
+.parallax-bg {
+    background-image: url("https://acortar.link/5G7sqK");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 50vh; /* Ajusta según tu necesidad */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative; /* Agregamos posición relativa para usarla como referencia */
+}
+
+.parallax-bg h3 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+/* Ajuste para la imagen dentro del contenedor */
+.parallax-bg img {
+    max-width: 100%;
+    /* height: auto;
+    position: absolute; Posicionamos absolutamente la imagen */
+}
+
+@media (max-width: 1370px) {
+    .parallax-bg {
+        background-position: center center;
+    }
+}
+
+/* ESTILOS PARA EL INDEX*/
+.accordion-body {
+    text-align: justify;
+}
+
+#carouselExampleSlidesOnly .carousel-item {
+    height: 500px;
+}
+
+.index-container {
+    background-color: #33393f;
+    color: white;
+    min-height: 100vh;
+}
+
+@media (max-width: 990px) {
+    #carouselExampleSlidesOnly .carousel-item {
+        height: 350px;
+    }
+}
