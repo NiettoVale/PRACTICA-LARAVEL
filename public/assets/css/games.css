@@ -18,6 +18,7 @@ main {
     font-weight: bold;
 }
 
+
 /* EFECTO PARALLAX */
 .parallax-bg {
     background-image: url("https://acortar.link/5G7sqK");
@@ -57,9 +58,6 @@ main {
     text-align: justify;
 }
 
-#carouselExampleSlidesOnly .carousel-item {
-    height: 500px;
-}
 
 .index-container {
     background-color: #33393f;
@@ -67,8 +65,3 @@ main {
     min-height: 100vh;
 }
 
-@media (max-width: 990px) {
-    #carouselExampleSlidesOnly .carousel-item {
-        height: 350px;
-    }
-}

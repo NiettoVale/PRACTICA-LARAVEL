@@ -14,5 +14,6 @@
 Route::prefix('games')->group(function () {
     Route::get('/', 'GamesController@index')->name('games.index');
     Route::get('/componentes', 'GamesController@componentes')->name('games.componentes');
-    Route::get('/imagenes', 'GamesController@imagenes')->name('games.final');
+    Route::get('/imagenes', 'GamesController@imagenes')->name('games.galeria_imagenes');
+    Route::get('/personajes', 'GamesController@personajes')->name('games.listado_personajes');
 });

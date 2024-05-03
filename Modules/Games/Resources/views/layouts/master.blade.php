@@ -5,47 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Modulo Games</title>
 
-    {{-- Importacion de estilos propios --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/games.css') }}">
+    <title>Sukuna: El Mal Encarnado</title>
+    {{-- Logo --}}
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.svg') }}">
 
     {{-- Importacion de bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    {{-- Importacion de estilos propios --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/games.css') }}">
 </head>
 
 <body class="wrapper">
     {{-- NavBar --}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top mb-5">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('assets/images/bootstrap-logo.svg') }}" alt="Logo de bootstrap 5" width="60"
-                    height="50">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="me-3 ">
+                <img src="{{ asset('assets/images/itadori.png') }}" alt="Yuuji Itadori" width="60">
+            </div>
+
+            <div>
+                <a class="navbar-brand" href="{{ route('games.index') }}">Jujutsu Kaisen</a>
+                <img src="{{ asset('assets/images/satoru.png') }}" alt="Satoru Gojo" width="60">
+            </div>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse ms-5" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('games.index') }}">Inicio</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Principal
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ route('games.index') }}">Inicio</a></li>
+                            <li><a class="dropdown-item" href="{{ route('games.galeria_imagenes') }}">Galeria de
+                                    Imagenes</a></li>
+                            <li><a class="dropdown-item" href="{{ route('games.listado_personajes') }}">Listado de
+                                    personajes</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('games.final') }}">Imagenes y formularios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('games.componentes') }}">Componentes</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Bootstrap
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ route('games.componentes') }}">Componentas</a></li>
+                            <li><a class="dropdown-item" href="#">Imagenes y Formularios</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-
     {{-- Contenido principal --}}
-    <main>
+    <main class="mt-5">
         @yield('content')
     </main>
 
@@ -63,27 +86,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
-    </script>
-
-    <script>
-        (() => {
-            'use strict'
-
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            const forms = document.querySelectorAll('.needs-validation')
-
-            // Loop over them and prevent submission
-            Array.from(forms).forEach(form => {
-                form.addEventListener('submit', event => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    }
-
-                    form.classList.add('was-validated')
-                }, false)
-            })
-        })()
     </script>
 </body>
 

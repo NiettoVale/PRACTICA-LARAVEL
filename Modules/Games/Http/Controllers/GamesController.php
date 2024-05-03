@@ -20,6 +20,11 @@ class GamesController extends Controller
 
     public function imagenes()
     {
+        return view('games::galeria');
+    }
+
+    public function personajes()
+    {
         return view('games::imagenes');
     }
 }

@@ -85,6 +85,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -125,33 +126,47 @@
 
         {{-- Galeria de imagenes --}}
         <div class="container-sm mt-3">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://acortar.link/xcGTzD" class="d-block w-100" alt="...">
+                        <img src="{{ asset('assets/images/imagen-1.png') }}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://acortar.link/MCw5sN" class="d-block w-100" alt="...">
+                        <img src="{{ asset('assets/images/imagen-2.png') }}" class="d-block w-100" alt="...">
                     </div>
-
                     <div class="carousel-item">
-                        <img src="https://acortar.link/ErMvKq" class="d-block w-100" alt="...">
+                        <img src="{{ asset('assets/images/imagen-3.png') }}" class="d-block w-100" alt="...">
                     </div>
-
                     <div class="carousel-item">
-                        <img src="https://acortar.link/04gED6" class="d-block w-100"
-                            alt="Estudiantes de Toki yendo de comrpas">
+                        <img src="{{ asset('assets/images/imagen-4.png') }}" class="d-block w-100" alt="...">
                     </div>
-
-                    <div class="carousel-item">
-                        <img src="https://acortar.link/ugZesx" class="d-block w-100"
-                            alt="Estudiantes de Tokio en un festival">
-                    </div>
+                    <!-- Agrega más divs de carousel-item según el número de imágenes -->
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
 
-            <a class="btn btn-success text-center mt-3 d-flex justify-content-center align-items-center "
-                href="{{ route('games.final') }}">VER
+
+
+
+            <a class="btn btn-success text-center mt-3 d-flex justify-content-center align-items-center"
+                href="{{ route('games.galeria_imagenes') }}">VER
                 MAS</a>
         </div>
     </div>
